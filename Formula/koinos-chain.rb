@@ -10,7 +10,9 @@ class KoinosChain < Formula
   depends_on "cmake" => :build
 
   def install
+    ohai "Configuring Koinos Chain project"
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    ohai "Building Koinos Chain"
     system "make", "install"
   end
 
